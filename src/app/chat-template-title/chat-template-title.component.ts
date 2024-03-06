@@ -9,6 +9,7 @@ import { Message } from '../models/message.model';
 @Component({
   selector:'app-chat-template',
   templateUrl: './chat-template-title.component.html',
+  styleUrls:['./chat-template-title.component.scss'],
 })
 export class ChatTemplateTitleComponent {
 
@@ -29,6 +30,7 @@ export class ChatTemplateTitleComponent {
         name: 'Bot',
         avatar: 'https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/robot-face.png',
       },
+      size: 'small'
     },
   ];
 
@@ -41,6 +43,7 @@ export class ChatTemplateTitleComponent {
         name: 'John Doe',
         avatar: 'https://techcrunch.com/wp-content/uploads/2015/08/safe_image.gif',
       },
+      size: 'small',
     });
 
     console.log(event.message);
@@ -66,7 +69,7 @@ export class ChatTemplateTitleComponent {
           this.messages.push({text: assistantMessage, date: new Date(), reply: false,user: {
             name: 'Bot',
             avatar: 'https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/robot-face.png',
-          }})
+          }, size: 'small'})
         }),
         catchError((error) => this.handleError(error))
       )
