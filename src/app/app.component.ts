@@ -6,6 +6,7 @@ import { Message } from './models/message.model';
 import { ErrorResponse } from './models/chat-response.model';
 import { MatDialog } from '@angular/material/dialog';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

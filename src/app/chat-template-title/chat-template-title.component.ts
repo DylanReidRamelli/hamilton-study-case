@@ -4,7 +4,11 @@ import { ErrorResponse } from '../models/chat-response.model';
 import { catchError, take, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { Message } from '../models/message.model';
-// import { ChatShowcaseService } from './chat-showcase.service';
+import {  Messages } from '../welcome';
+
+
+const CHAT_BOT_PERSONALITY= 'As an adept customer support assistant chat-bot, you are capable of answering basic questions that users may have about the company Hamilton-Medical. The company is in charge of producing medical ventilators and other kinds of laboratory equipment. You should not answer questions that are not related to Hamilton.'
+
 
 @Component({
   selector:'app-chat-template',
@@ -13,26 +17,18 @@ import { Message } from '../models/message.model';
 })
 export class ChatTemplateTitleComponent {
 
+  currentIcon = 'chat';
   userMessage = '';
   conversation: Message[] = [
-    { role: 'system', content: 'As an adept customer support assistant chat bot, you are capable of answering basic questions that users may have about a certain company and about it\'s website. The company is called Hamilton Medical and it is in charge of producing medical ventilators. It has a website, which is: https://www.hamilton-medical.com/' }
+    { role: 'system', content: CHAT_BOT_PERSONALITY}
   ];
 
-  @ViewChild('messagesContainer') private messagesContainer!: ElementRef;
+  // @ViewChild('messagesContainer') private messagesContainer!: ElementRef;
 
   constructor(private chatGptService: ChatGptService){}
-  messages: any[] = [
-    {
-      text: 'As an adept customer support assistant chat bot, you are capable of answering basic questions that users may have about a certain company and about it\'s website. The company is called Hamilton Medical and it is in charge of producing medical ventilators. It has a website, which is: https://www.hamilton-medical.com/',
-      date: new Date(),
-      reply: false,
-      user: {
-        name: 'Bot',
-        avatar: 'https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/robot-face.png',
-      },
-      size: 'small'
-    },
-  ];
+
+  // TODO: See if future need backend to store the messages. For securit and privacy reasons I don't know.
+  messages = Messages;
 
   getMessage(event:any) {
     this.messages.push({
@@ -40,16 +36,12 @@ export class ChatTemplateTitleComponent {
       date: new Date(),
       reply: true,
       user: {
-        name: 'John Doe',
-        avatar: 'https://techcrunch.com/wp-content/uploads/2015/08/safe_image.gif',
+        name: '',
+        avatar:''
       },
       size: 'small',
     });
-
-    console.log(event.message);
-
     this.sendMessage(event.message);
-
   }
 
 
