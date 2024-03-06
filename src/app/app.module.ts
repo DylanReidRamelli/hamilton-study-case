@@ -12,6 +12,7 @@ import { ChatTemplateTitleComponent } from './chat-template-title/chat-template-
 import { RouterModule } from '@angular/router';
 import { routes } from './app-routing.module';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { ButtonChatComponent } from './button-chat/button-chat.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbButtonModule,
     RouterModule.forRoot(routes, {useHash: true}),
     NbThemeModule.forRoot({ name: 'default' }),
-    NbEvaIconsModule
+    NbEvaIconsModule,
+    ButtonChatComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
