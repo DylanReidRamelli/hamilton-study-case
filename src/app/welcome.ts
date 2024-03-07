@@ -1,5 +1,3 @@
-import { CommonModule } from "@angular/common"
-
 export const Messages: any[] = [
     {
       text: 'Hi there, welcome to Hamilton-Medical',

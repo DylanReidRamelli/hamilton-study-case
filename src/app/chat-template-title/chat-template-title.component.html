@@ -1,4 +1,5 @@
-<nb-chat title="Hamilton Help Desk">
+<!-- TODO: keep or remove message attributes that are not used. Or create a better interface. -->
+<nb-chat title="Hamilton Help Desk Bot">
   <nb-chat-message *ngFor="let msg of messages"
                    [type]="msg.type"
                    [message]="msg.text"
@@ -14,4 +15,3 @@
 <nb-chat-form (send)="getMessage($event)" [dropFiles]="true">
 </nb-chat-form>
 </nb-chat>
-<!-- <app-button-chat [icon]="currentIcon"></app-button-chat> -->

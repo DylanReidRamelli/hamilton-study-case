@@ -1,5 +1,6 @@
+<!-- TODO: Should be on click instead of changing icon -->
 <app-chat-template *ngIf="icon==='expand_less'"></app-chat-template>
 
-<button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="changeIcon()">
+<button mat-fab color="primary" aria-label="Open Chat" (click)="changeIcon()">
     <mat-icon>{{icon}}</mat-icon>
 </button>
