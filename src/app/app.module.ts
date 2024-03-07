@@ -13,12 +13,16 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app-routing.module';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { ButtonChatComponent } from './button-chat/button-chat.component';
+import {MatButtonModule} from '@angular/material/button'
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { NbIconComponent } from '@nebular/theme';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatTemplateTitleComponent,
+    ButtonChatComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +31,8 @@ import { ButtonChatComponent } from './button-chat/button-chat.component';
     FormsModule,
     MarkdownModule.forRoot(),
     MatIconModule,
+    MatButtonModule,
+    MatTooltipModule,
     BrowserAnimationsModule,
     NbChatModule,
     NbLayoutModule,
@@ -35,7 +41,6 @@ import { ButtonChatComponent } from './button-chat/button-chat.component';
     RouterModule.forRoot(routes, {useHash: true}),
     NbThemeModule.forRoot({ name: 'default' }),
     NbEvaIconsModule,
-    ButtonChatComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

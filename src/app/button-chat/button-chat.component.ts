@@ -1,7 +1,4 @@
 import { Component, Output, Input } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button'
-import {MatIconModule} from '@angular/material/icon';
-import {MatTooltipModule} from '@angular/material/tooltip';
 
 // TODO use a model or something else.
 interface iconModel{
@@ -10,8 +7,7 @@ interface iconModel{
 
 @Component({
   selector: 'app-button-chat',
-  standalone: true,
-  imports:[MatButtonModule, MatTooltipModule, MatIconModule],
+  standalone: false,
   templateUrl: './button-chat.component.html',
   styleUrls: ['./button-chat.component.scss']
 })
